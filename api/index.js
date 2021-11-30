@@ -14,7 +14,7 @@ dotenv.config();
 
 app.listen(process.env.PORT || 5000, () => {
     console.log("Background server is running!")
-}); 
+});
 
 mongoose.connect(
     process.env.MONGO_URL)
