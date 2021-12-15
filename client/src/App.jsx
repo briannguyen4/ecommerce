@@ -1,3 +1,8 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
 import Product from "./pages/Product";
@@ -7,12 +12,13 @@ import Cart from "./pages/Cart";
 
 const App = () => {
   return (
-  // <Home/>
-  // <ProductList/>
-  // <Product/>
-  // <Login/>
-  // <Register/>
-  <Cart/>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
