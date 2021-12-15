@@ -71,8 +71,10 @@ const ProductList = () => {
                         <Option disabled>
                             Color
                         </Option>
-                        <Option>White</Option>
-                        <Option>Black </Option>
+                        <Option>white</Option>
+                        <Option>black </Option>
+                        <Option>pink</Option>
+                        <Option>grey</Option>
                         <Option>Red</Option>
                         <Option>Blue</Option>
                         <Option>Yellow</Option>
@@ -93,7 +95,7 @@ const ProductList = () => {
                 </Filter>
                 <Filter>
                     <FilterText>Sort Products:</FilterText>
-                    <Select onChange={e=>setSort(e.target.value)}>
+                    <Select onChange={(e) => setSort(e.target.value)}>
                         <Option value="newest">Newest</Option>
                         <Option value="asc">Price (asc)</Option>
                         <Option value="desc">Price (desc)</Option>
@@ -107,4 +109,4 @@ const ProductList = () => {
     )
 }
 
-export default ProductList
+export default ProductList;
