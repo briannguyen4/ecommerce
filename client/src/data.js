@@ -20,16 +20,19 @@ export const categories = [
         id: 3,
         img: "https://media.istockphoto.com/photos/photo-portrait-of-attractive-pretty-cute-lovable-fascinating-delicate-picture-id1009480924?k=20&m=1009480924&s=612x612&w=0&h=VBdWv331CqMnw793JsjIoDTJIzgqZVxM1mAk8JmaG3w=",
         title: "DRESSES",
+        category: "women"
     },
     {
         id: 2,
         img: "https://media.istockphoto.com/photos/smiling-african-american-woman-in-white-tshirt-front-mock-up-picture-id1254214920?k=20&m=1254214920&s=612x612&w=0&h=meyOD-SzHiGoUX9o25D3ITWPSMrUCN3kVSFi4q8RECA=",
         title: "SHIRTS",
+        category: "shirts"
     },
     {
         id: 3,
         img: "https://media.istockphoto.com/photos/smiling-brunette-showing-finger-up-picture-id959251884?k=20&m=959251884&s=612x612&w=0&h=o5M8O1nw_h-099oTiTo8fA8QmBNjbXPYSujkaZ5cB4U=",
         title: "SWEATERS",
+        category: "outerwear"
     },
 ];
 
