@@ -74,7 +74,7 @@ const Product = ({item}) => {
     useEffect(() => {
         const getProduct = async () => {
             try {
-                const res = axios
+                const res = axios 
             } catch {}
         }
     }, [id]);
