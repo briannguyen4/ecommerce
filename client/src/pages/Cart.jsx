@@ -5,6 +5,10 @@ import Footer from "../components/Footer";
 import { Add, Remove } from "@material-ui/icons";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
+import { useState, useEffect } from 'react';
+import StripeCheckout from "react-stripe-checkout";
+import { userRequest } from "../requestMethods";
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
 
@@ -168,6 +172,27 @@ const Button = styled.button`
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
+    const [stripeToken, setStripeToken] = useState(null);
+    const history = useNavigate();
+
+
+    const onToken = (token) => {
+        setStripeToken(token);
+    }
+
+    useEffect(() => {
+        const makeRequest = async () => {
+            try {
+                const res = await userRequest.post("/checkout/payment", {
+                tokenId: stripeToken.id,
+                amount: 500,
+                });
+                history.push("/success", {data: res.data});
+            } catch {}
+        };
+        if (stripeToken) makeRequest();
+    }, [stripeToken, cart.total, history])
+
     return (
         <Container>
             <Navbar/>
@@ -225,7 +250,18 @@ const Cart = () => {
                             <SummaryItemText>Total</SummaryItemText>
                             <SummaryItemPrice>${cart.total}</SummaryItemPrice>
                         </SummaryItem>
-                        <Button>CHECKOUT NOW</Button>
+                        <StripeCheckout
+                            name="Wearhouse"
+                            image="https://img.freepik.com/free-vector/fashion-logo_10250-567.jpg?size=338&ext=jpg"
+                            billingAddress
+                            shippingAddress
+                            description={`Your total is $${cart.total}`}
+                            amount={cart.total * 100}
+                            token={onToken}
+                            stripeKey="pk_test_51K53kTGBhjZ3bKmgb0uEHwJKBqrCRIizjT75RTl9qppQ9zEhpMLh05CW4AlEUO5Vh4ktcUULwAxNHSRy1ZD1r2PC00tGhDfEOt"
+                        >
+                            <Button>CHECKOUT NOW</Button>
+                        </StripeCheckout>
                     </Summary>
                 </Bottom>
             </Wrapper>
