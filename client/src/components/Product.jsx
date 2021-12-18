@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { ShoppingCartOutlined, SearchOutlined, FavoriteBorderOutlined } from "@material-ui/icons";
-import { Link, useLocation } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
+
+
 
 const Info = styled.div`
     width: 100%;
@@ -67,18 +68,6 @@ const Icon = styled.div`
 
 
 const Product = ({item}) => {
-    const location = useLocation();
-    const id = location.pathname.split("/")[2];
-    const [product, setProduct] = useState({});
-
-    useEffect(() => {
-        const getProduct = async () => {
-            try {
-                const res = axios 
-            } catch {}
-        }
-    }, [id]);
-
     return (
         <Container>
             <Circle/>
