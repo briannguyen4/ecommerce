@@ -11,7 +11,6 @@ import { publicRequest } from "../requestMethods";
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
 
-
 const Container = styled.div`
 
 `
