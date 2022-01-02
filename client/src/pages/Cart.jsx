@@ -266,10 +266,10 @@ const Cart = () => {
                 </Bottom>
             </Wrapper>
             <Footer/>
-
         </Container>
     )
 }
 
 export default Cart;
+
 
