@@ -10,7 +10,6 @@ import StripeCheckout from "react-stripe-checkout";
 import { userRequest } from "../requestMethods";
 import { useNavigate } from 'react-router-dom';
 
-
 const Container = styled.div`
 
 `
@@ -267,7 +266,6 @@ const Cart = () => {
                 </Bottom>
             </Wrapper>
             <Footer/>
-
 
 
 
